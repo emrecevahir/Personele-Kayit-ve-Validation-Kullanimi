@@ -1,0 +1,38 @@
+﻿@model AddUser
+
+<style>
+    .red{
+        color:red;
+    }
+</style>
+@using (Html.BeginForm("Index","Home",FormMethod.Post))
+{
+
+<div class="mb-3">
+    @Html.LabelFor(m => m.IdentityNo, new { @class = "form-label" })
+    @Html.TextBoxFor(m => m.IdentityNo, new { @class = "form-control", placeholder = "Tc Kimlik No" })
+    <i class="red">@Html.ValidationMessageFor(m => m.IdentityNo)</i>
+</div>
+<div class="mb-3">
+    @Html.LabelFor(m => m.Name, new { @class = "form-label" })
+    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "İsim" })
+    <i class="red">@Html.ValidationMessageFor(m => m.Name)</i>
+</div>
+<div class="mb-3">
+    @Html.LabelFor(m => m.LastName, new { @class = "form-label" })
+    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Soy İsim" })
+    <i class="red">@Html.ValidationMessageFor(m => m.LastName)</i>
+</div>
+<div class="mb-3">
+    @Html.LabelFor(m => m.Email, new { @class = "form-label" })
+    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
+    <i class="red">@Html.ValidationMessageFor(m => m.Email)</i>
+</div>
+<div class="mb-3">
+    @Html.LabelFor(m => m.Age, new { @class = "form-label" })
+    @Html.TextBoxFor(m => m.Age, new { @class = "form-control", placeholder = "Yaş" })
+    <i class="red">@Html.ValidationMessageFor(m => m.Age)</i>
+    </div>
+
+    <button type="submit" class="btn btn-outline-success">Kaydet</button>
+}
